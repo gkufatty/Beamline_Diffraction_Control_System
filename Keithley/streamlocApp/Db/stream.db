@@ -1,0 +1,33 @@
+
+record(stringin, "$(P)keithley-idn") {
+    field(DESC, "identification")
+    field(DTYP, "stream")
+    field(INP, "@cool.proto getIDN $(PORT)")
+    field(SCAN,"Passive")
+}
+
+
+record(ai, "$(P)keithley-meas-curr") {
+    field(DESC, "measured current")
+    field(DTYP, "stream")
+    field(INP, "@cool.proto measCurr $(PORT)")
+    field(EGU, "A")
+    field(SCAN, "Passive")
+}
+
+
+# record(ai, "$(P)keithley-curr-rang") {
+#     field(DESC, "measured curren ranget")
+#     field(DTYP, "stream")
+#     field(INP, "@cool.proto ReadCurrRange $(PORT)")
+#     field(EGU, "A")
+#     field(SCAN, "Passive")
+# }
+
+# record(ai, "$(P)keithley-meas-curr") {
+#     field(DESC, "measured current")
+#     field(DTYP, "stream")
+#     field(INP, "@cool.proto measCurr $(PORT)")
+#     field(EGU, "A")
+#     field(SCAN, "Passive")
+# }
