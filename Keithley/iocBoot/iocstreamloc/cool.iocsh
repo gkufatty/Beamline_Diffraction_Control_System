@@ -1,0 +1,6 @@
+
+epicsEnvSet "STREAM_PROTOCOL_PATH", "$(TOP)"
+
+drvAsynIPPortConfigure "$(PORT)", "localhost:5555"
+
+dbLoadRecords("$(TOP)/db/stream.db" "P=$(user):,PORT=$(PORT)")
