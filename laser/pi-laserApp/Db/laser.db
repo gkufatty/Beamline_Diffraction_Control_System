@@ -1,6 +1,8 @@
 record(ai, "$(P):$(R):FractionPower") {
     field(DESC, "Desired fraction of power in [0,1]")
     field(INP, "0.0")
+    # field(DRVH, "1.0")
+    # field(DRVL, "0.0")
     field(FLNK, "$(P):$(R):#PWMCalc")
 }
 

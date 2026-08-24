@@ -14,15 +14,21 @@ asynLaser::asynLaser(const char *portName, const int gpioPin, const int usePwm)
                      0, 1, 0, 0), gpioPin(gpioPin), usePwm(usePwm) {
 
     wiringPiSetup();
-    pinMode(gpioPin, PWM_OUTPUT);
-    pwmSetRange(LASER_PWM_RANGE);
-    pwmSetMode(PWM_MODE_MS);
-    pwmSetClock(375);
+
+    if (usePwm) {
+        pinMode(gpioPin, PWM_OUTPUT);
+        pwmSetRange(LASER_PWM_RANGE);
+        pwmSetMode(PWM_MODE_MS);
+        pwmSetClock(375);
+        pwmWrite(gpioPin, 0);
+    } else {
+        pinMode(gpioPin, OUTPUT);
+        digitalWrite(gpioPin, 0);
+    }
 
     createParam(P_DutyCycleString, asynParamFloat64, &P_DutyCycle);
     setDoubleParam(P_DutyCycle, 0);
 
-    pwmWrite(gpioPin, 0);
 }
 
 asynLaser::~asynLaser() = default;
@@ -38,9 +44,13 @@ asynStatus asynLaser::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
 
     if (function == P_DutyCycle) {
         setDoubleParam(P_DutyCycle, value);
-        double dc = static_cast<double>(LASER_PWM_RANGE) * value;
 
-        pwmWrite(gpioPin, static_cast<int>(dc));
+        if (this->usePwm) {
+            double dc = static_cast<double>(LASER_PWM_RANGE) * value;
+            pwmWrite(this->gpioPin, static_cast<int>(dc));
+        } else {
+            digitalWrite(this->gpioPin, (value != 0));
+        }
     } else { }
 
     // Read logic
