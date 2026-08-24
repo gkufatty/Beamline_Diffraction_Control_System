@@ -1,5 +1,27 @@
-record(ao, "$(P):$(R):DutyCycle") {
+record(ai, "$(P):$(R):FractionPower") {
+    field(DESC, "Desired fraction of power in [0,1]")
+    field(INP, "0.0")
+    field(FLNK, "$(P):$(R):#PWMCalc")
+}
+
+record(bi, "$(P):$(R):Enable") {
+    field(INP, "0")
+    field(DESC, "Enable laser")
+    field(FLNK, "$(P):$(R):#PWMCalc")
+}
+
+record(calc, "$(P):$(R):#PWMCalc") {
+    field(DESC, "Duty Cycle enabling")
+    field(FLNK, "$(P):$(R):#PWMOut")
+    field(INPA, "$(P):$(R):FractionPower")
+    field(INPB, "$(P):$(R):Enable")
+    field(CALC, "B ? A : 0")
+}
+
+record(ao, "$(P):$(R):#PWMOut") {
     field(DESC, "Duty Cycle")
     field(DTYP, "asynFloat64")
     field(OUT, "@asyn($(PORT))DUTY_CYCLE")
+    field(OMSL, "closed_loop")
+    field(DOL,  "$(P):$(R):#PWMCalc")
 }
