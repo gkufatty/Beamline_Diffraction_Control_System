@@ -18,6 +18,8 @@ DBD += pi-laser.dbd
 
 # pi-laser.dbd will be made up from these files:
 pi-laser_DBD += base.dbd
+pi-laser_DBD += asyn.dbd
+pi-laser_DBD += asynLaser.dbd
 
 # Include dbd files from all support applications:
 #pi-laser_DBD += xxx.dbd

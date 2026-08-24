@@ -1,9 +1,9 @@
 #include "asynPortDriver.h"
+#include "epicsTypes.h"
 
-#define P_PeriodString "PERIOD"
 #define P_DutyCycleString "DUTY_CYCLE"
 
-static const int LASER_PIN = 18;
+static const int LASER_PIN = 1;
 static const int LASER_PWM_RANGE = 1024;
 
 class asynLaser : public asynPortDriver {

@@ -15,8 +15,11 @@ cd "${TOP}"
 dbLoadDatabase "dbd/pi-laser.dbd"
 pi_laser_registerRecordDeviceDriver pdbbase
 
+epicsEnvSet("LASER_PORT", "asynLaser")
+asynLaserConfigure("$(LASER_PORT)")
+
 ## Load record instances
-#dbLoadRecords("db/pi-laser.db","user=pi")
+dbLoadRecords("db/laser.db","P=LaserDiffraction, R=Laser, PORT=$(LASER_PORT)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
