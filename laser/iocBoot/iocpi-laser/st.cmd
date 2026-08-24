@@ -16,7 +16,7 @@ dbLoadDatabase "dbd/pi-laser.dbd"
 pi_laser_registerRecordDeviceDriver pdbbase
 
 epicsEnvSet("LASER_PORT", "asynLaser")
-asynLaserConfigure("$(LASER_PORT)")
+asynLaserConfigure("$(LASER_PORT)", 1, 1) # PWM Pin 1
 
 ## Load record instances
 dbLoadRecords("db/laser.db","P=LaserDiffraction, R=Laser, PORT=$(LASER_PORT)")

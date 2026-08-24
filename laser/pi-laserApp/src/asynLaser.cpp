@@ -7,14 +7,14 @@
 
 static const char *driverName="asynLaser";
 
-asynLaser::asynLaser(const char *portName)
+asynLaser::asynLaser(const char *portName, const int gpioPin, const int usePwm)
     : asynPortDriver(portName, 1,
                      asynInt32Mask | asynFloat64Mask | asynDrvUserMask,
                      asynInt32Mask | asynFloat64Mask,
-                     0, 1, 0, 0) {
+                     0, 1, 0, 0), gpioPin(gpioPin), usePwm(usePwm) {
 
     wiringPiSetup();
-    pinMode(LASER_PIN, PWM_OUTPUT);
+    pinMode(gpioPin, PWM_OUTPUT);
     pwmSetRange(LASER_PWM_RANGE);
     pwmSetMode(PWM_MODE_MS);
     pwmSetClock(375);
@@ -22,7 +22,7 @@ asynLaser::asynLaser(const char *portName)
     createParam(P_DutyCycleString, asynParamFloat64, &P_DutyCycle);
     setDoubleParam(P_DutyCycle, 0);
 
-    pwmWrite(LASER_PIN, 0);
+    pwmWrite(gpioPin, 0);
 }
 
 asynLaser::~asynLaser() = default;
@@ -40,7 +40,7 @@ asynStatus asynLaser::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
         setDoubleParam(P_DutyCycle, value);
         double dc = static_cast<double>(LASER_PWM_RANGE) * value;
 
-        pwmWrite(LASER_PIN, static_cast<int>(dc));
+        pwmWrite(gpioPin, static_cast<int>(dc));
     } else { }
 
     // Read logic
@@ -60,9 +60,9 @@ asynStatus asynLaser::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
 
 extern "C" {
 
-    int asynLaserConfigure(const char *portName)
+    int asynLaserConfigure(const char *portName, const int gpioPin, const int usePwm)
     {
-        new asynLaser(portName);
+        new asynLaser(portName, gpioPin, usePwm);
         return(asynSuccess);
     }
 
@@ -70,10 +70,13 @@ extern "C" {
     /* EPICS iocsh shell commands */
 
     static const iocshArg initArg0 = { "portName",iocshArgString};
-    static const iocshArg * const initArgs[] = {&initArg0};
-    static const iocshFuncDef initFuncDef = {"asynLaserConfigure",1,initArgs};
+    static const iocshArg initArg1 = { "gpioPin",iocshArgInt};
+    static const iocshArg initArg2 = { "usePwm",iocshArgInt};
+
+    static const iocshArg * const initArgs[] = {&initArg0, &initArg1, &initArg2};
+    static const iocshFuncDef initFuncDef = {"asynLaserConfigure",3,initArgs};
     static void initCallFunc(const iocshArgBuf *args) {
-        asynLaserConfigure(args[0].sval);
+        asynLaserConfigure(args[0].sval, args[1].ival, args[2].ival);
     }
 
     void asynLaserRegister(void) {
