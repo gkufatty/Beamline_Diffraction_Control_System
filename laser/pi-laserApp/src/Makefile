@@ -20,11 +20,12 @@ DBD += pi-laser.dbd
 pi-laser_DBD += base.dbd
 pi-laser_DBD += asyn.dbd
 pi-laser_DBD += asynLaser.dbd
+pi-laser_DBD += qsrv.dbd PVAServerRegister.dbd
 
 # Include dbd files from all support applications:
 #pi-laser_DBD += xxx.dbd
 
-pi-laser_LIBS += asyn
+pi-laser_LIBS += asyn qsrv $(EPICS_BASE_PVA_CORE_LIBS)
 pi-laser_SYS_LIBS += wiringPi
 
 # pi-laser_registerRecordDeviceDriver.cpp derives from pi-laser.dbd
