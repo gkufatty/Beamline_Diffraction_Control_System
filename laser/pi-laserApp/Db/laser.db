@@ -1,29 +1,31 @@
-record(ai, "$(P):$(R):FractionPower") {
-    field(DESC, "Desired fraction of power in [0,1]")
+record(ai, "$(P):$(R):Value") {
+    field(DESC, "Value: 0,1 for GPIO, 0.0-1.0 for PWM")
     field(INP, "0.0")
-    # field(DRVH, "1.0")
-    # field(DRVL, "0.0")
-    field(FLNK, "$(P):$(R):#PWMCalc")
+    field(FLNK, "$(P):$(R):#Calc")
+    field(HOPR, "1.0")
+    field(LOPR, "0.0")
 }
 
 record(bi, "$(P):$(R):Enable") {
     field(INP, "0")
     field(DESC, "Enable laser")
-    field(FLNK, "$(P):$(R):#PWMCalc")
+    field(FLNK, "$(P):$(R):#Calc")
 }
 
-record(calc, "$(P):$(R):#PWMCalc") {
+record(calc, "$(P):$(R):#Calc") {
     field(DESC, "Duty Cycle enabling")
-    field(FLNK, "$(P):$(R):#PWMOut")
-    field(INPA, "$(P):$(R):FractionPower")
+    field(FLNK, "$(P):$(R):#Out")
+    field(INPA, "$(P):$(R):Value")
     field(INPB, "$(P):$(R):Enable")
-    field(CALC, "B ? A : 0")
+    field(CALC, "B ? MAX(MIN(A, 1), 0) : 0") # If enabled, limit to 0-1, else 0
 }
 
-record(ao, "$(P):$(R):#PWMOut") {
+record(ao, "$(P):$(R):#Out") {
     field(DESC, "Duty Cycle")
     field(DTYP, "asynFloat64")
-    field(OUT, "@asyn($(PORT))DUTY_CYCLE")
+    field(OUT, "@asyn($(PORT))VALUE")
     field(OMSL, "closed_loop")
-    field(DOL,  "$(P):$(R):#PWMCalc")
+    field(DOL,  "$(P):$(R):#Calc")
+    field(DRVH, "1.0")
+    field(DRVL, "0.0")
 }

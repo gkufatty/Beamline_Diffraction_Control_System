@@ -1,7 +1,7 @@
 #include "asynPortDriver.h"
 #include "epicsTypes.h"
 
-#define P_DutyCycleString "DUTY_CYCLE"
+#define P_ValueString "VALUE"
 
 static const int LASER_PWM_RANGE = 1024;
 
@@ -15,5 +15,5 @@ public:
 private:
     const int gpioPin;
     const int usePwm;
-    int P_DutyCycle;
+    int P_Value;
 };

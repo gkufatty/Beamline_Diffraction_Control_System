@@ -26,8 +26,8 @@ asynLaser::asynLaser(const char *portName, const int gpioPin, const int usePwm)
         digitalWrite(gpioPin, 0);
     }
 
-    createParam(P_DutyCycleString, asynParamFloat64, &P_DutyCycle);
-    setDoubleParam(P_DutyCycle, 0);
+    createParam(P_ValueString, asynParamFloat64, &P_Value);
+    setDoubleParam(P_Value, 0);
 
 }
 
@@ -42,8 +42,8 @@ asynStatus asynLaser::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
     status = setDoubleParam(function, value);
     getParamName(function, &paramName);
 
-    if (function == P_DutyCycle) {
-        setDoubleParam(P_DutyCycle, value);
+    if (function == P_Value) {
+        setDoubleParam(P_Value, value);
 
         if (this->usePwm) {
             double dc = static_cast<double>(LASER_PWM_RANGE) * value;
