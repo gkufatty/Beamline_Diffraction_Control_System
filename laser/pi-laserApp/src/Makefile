@@ -22,8 +22,8 @@ pi-laser_DBD += base.dbd
 # Include dbd files from all support applications:
 #pi-laser_DBD += xxx.dbd
 
-# Add all the support libraries needed by this IOC
-#pi-laser_LIBS += xxx
+pi-laser_LIBS += asyn
+pi-laser_SYS_LIBS += wiringPi
 
 # pi-laser_registerRecordDeviceDriver.cpp derives from pi-laser.dbd
 pi-laser_SRCS += pi-laser_registerRecordDeviceDriver.cpp
@@ -31,6 +31,8 @@ pi-laser_SRCS += pi-laser_registerRecordDeviceDriver.cpp
 # Build the main IOC entry point on workstation OSs.
 pi-laser_SRCS_DEFAULT += pi-laserMain.cpp
 pi-laser_SRCS_vxWorks += -nil-
+
+pi-laser_SRCS += asynLaser.cpp
 
 # Add support from base/src/vxWorks if needed
 #pi-laser_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
@@ -43,4 +45,3 @@ pi-laser_LIBS += $(EPICS_BASE_IOC_LIBS)
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-
