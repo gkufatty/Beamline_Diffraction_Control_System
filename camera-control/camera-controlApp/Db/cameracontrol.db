@@ -2,4 +2,26 @@ record(stringin, "$(P):$(R):Id") {
     field(DESC, "Camera Identification")
     field(INP, "@cameracontrol.proto getParam(root.Brand.ProdFullName) $(PORT)")
     field(DTYP, "stream")
+    field(PINI, "YES")
+}
+
+record(stringin, "$(P):$(R):Serial") {
+    field(DESC, "Camera Identification")
+    field(INP, "@cameracontrol.proto getParam(root.Properties.System.SerialNumber) $(PORT)")
+    field(DTYP, "stream")
+    field(PINI, "YES")
+    field(TPRO, "1")
+}
+
+record(ai, "$(P):$(R):Sharpness-RB") {
+    field(DESC, "Camera Identification")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.Sharpness) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+}
+
+record(ao, "$(P):$(R):Sharpness") {
+    field(DESC, "Camera Identification")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.Sharpness) $(PORT)")
+    field(DTYP, "stream")
 }
