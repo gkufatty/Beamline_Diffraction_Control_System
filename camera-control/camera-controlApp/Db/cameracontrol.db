@@ -1,5 +1,5 @@
 record(stringin, "$(P):$(R):Id") {
     field(DESC, "Camera Identification")
-    field(INP, "@cameracontrol.proto getId $(PORT)")
+    field(INP, "@cameracontrol.proto getParam(root.Brand.ProdFullName) $(PORT)")
     field(DTYP, "stream")
 }
