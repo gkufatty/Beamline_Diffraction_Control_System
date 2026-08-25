@@ -1,0 +1,16 @@
+# RELEASE - Location of external support modules
+
+# EPICS_BASE should appear last so earlier modules can override stuff:
+EPICS_BASE = /home/epicsstudent/epics-base
+SUPPORT = /home/epicsstudent/epics-modules
+ASYN = $(SUPPORT)/asyn
+STREAM = $(SUPPORT)/StreamDevice
+MOTOR = $(SUPPORT)/motor
+
+
+# Use motor/module's generated release file when buidling inside motor
+-include $(TOP)/../../../RELEASE.$(EPICS_HOST_ARCH).local
+# Use motorSmarAct's release file when building inside motorSmarAct, but outside motor
+-include $(TOP)/../../configure/RELEASE.local
+# Use smarActIOC's RELEASE.local when building outside motorSmarAct
+-include $(TOP)/configure/RELEASE.local

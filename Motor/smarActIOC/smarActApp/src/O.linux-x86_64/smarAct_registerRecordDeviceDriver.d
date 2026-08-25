@@ -1,0 +1,29 @@
+smarAct_registerRecordDeviceDriver.o: \
+ smarAct_registerRecordDeviceDriver.cpp \
+ /home/epicsstudent/epics-base/include/compilerDependencies.h \
+ /home/epicsstudent/epics-base/include/compiler/gcc/compilerSpecific.h \
+ /home/epicsstudent/epics-base/include/epicsStdlib.h \
+ /home/epicsstudent/epics-base/include/libComAPI.h \
+ /home/epicsstudent/epics-base/include/os/Linux/osdStrtod.h \
+ /home/epicsstudent/epics-base/include/epicsTypes.h \
+ /home/epicsstudent/epics-base/include/compilerDependencies.h \
+ /home/epicsstudent/epics-base/include/errMdef.h \
+ /home/epicsstudent/epics-base/include/iocsh.h \
+ /home/epicsstudent/epics-base/include/iocshRegisterCommon.h \
+ /home/epicsstudent/epics-base/include/dbCoreAPI.h \
+ /home/epicsstudent/epics-base/include/registryCommon.h \
+ /home/epicsstudent/epics-base/include/dbStaticLib.h \
+ /home/epicsstudent/epics-base/include/dbFldTypes.h \
+ /home/epicsstudent/epics-base/include/dbBase.h \
+ /home/epicsstudent/epics-base/include/ellLib.h \
+ /home/epicsstudent/epics-base/include/dbDefs.h \
+ /home/epicsstudent/epics-base/include/recSup.h \
+ /home/epicsstudent/epics-base/include/devSup.h \
+ /home/epicsstudent/epics-base/include/drvSup.h \
+ /home/epicsstudent/epics-base/include/link.h \
+ /home/epicsstudent/epics-base/include/cantProceed.h \
+ /home/epicsstudent/epics-base/include/dbJLink.h \
+ /home/epicsstudent/epics-base/include/dbCoreAPI.h \
+ /home/epicsstudent/epics-base/include/registryRecordType.h \
+ /home/epicsstudent/epics-base/include/recSup.h \
+ /home/epicsstudent/epics-base/include/shareLib.h
