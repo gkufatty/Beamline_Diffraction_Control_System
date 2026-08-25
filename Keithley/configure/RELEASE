@@ -33,10 +33,10 @@
 #SNCSEQ = $(MODULES)/seq-ver
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
-EPICS_BASE = /Users/gk/Documents/epics/epics-base
-SUPPORT=/Users/gk/Documents/epics/modules
-ASYN=$(SUPPORT)/asyn
-STREAM=$(SUPPORT)/streamdevice
+EPICS_BASE = /home/epicsstudent/epics-base
+SUPPORT = /home/epicsstudent/epics-modules
+ASYN = $(SUPPORT)/asyn
+STREAM = $(SUPPORT)/StreamDevice
 
 # Set RULES here if you want to use build rules from somewhere
 # other than EPICS_BASE:
