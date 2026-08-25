@@ -1,0 +1,26 @@
+Terminator = CR;
+ReplyTimeout = 5000;
+
+getIDN {
+    out "*IDN?"; in "%79c"
+}
+
+measCurr {
+    out ":MEAS:CURR:DC?"; in "%f"
+}
+
+setFormElemCurr {
+    out ":FORM:ELEM CURR";
+}
+
+setCurrRange {
+    out ":SENSE:CURR:RANG %f";
+}
+
+getCurrRange {
+    out ":SENS:CURR:RANG?"; in "%f"
+}
+
+getErr {
+    out ":SYST:ERR?"; in "%79c"
+}

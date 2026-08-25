@@ -1,0 +1,47 @@
+
+record(lsi, "$(P):$(R):idn") {
+    field(DESC, "identification")
+    field(DTYP, "stream")
+    field(INP, "@cool.proto getIDN $(PORT)")
+    field(SCAN, "Passive")
+}
+
+record(ai, "$(P):$(R):meas-curr") {
+    field(DESC, "measured current")
+    field(DTYP, "stream")
+    field(INP, "@cool.proto measCurr $(PORT)")
+    field(EGU, "A")
+    field(SCAN, "Passive")
+}
+
+record(bo, "$(P):$(R):form-elem-curr") {
+    field(DESC, "config format: read current only")
+    field(DTYP, "stream")
+    field(OUT, "@cool.proto setFormElemCurr $(PORT)")
+    field(ZNAM, "0")
+    field(ONAM, "1")
+}
+
+record(ao, "$(P):$(R):curr-range") {
+    field(DESC, "current range setpoint")
+    field(DTYP, "stream")
+    field(OUT, "@cool.proto setCurrRange $(PORT)")
+    field(EGU, "A")
+    field(PREC, "6")
+}
+
+record(ai, "$(P):$(R):curr-range-rbv") {
+    field(DESC, "current range readback")
+    field(DTYP, "stream")
+    field(INP, "@cool.proto getCurrRange $(PORT)")
+    field(EGU, "A")
+    field(PREC, "6")
+    field(SCAN, "Passive")
+}
+
+record(lsi, "$(P):$(R):err") {
+    field(DESC, "communication status")
+    field(DTYP, "stream")
+    field(INP, "@cool.proto getErr $(PORT)")
+    field(SCAN, "Passive")
+}
