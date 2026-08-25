@@ -21,7 +21,7 @@ dbLoadRecords("db/GPiO.db","P=LaserDiffraction, R=Laser, PORT=$(LASER_PORT)")
 
 epicsEnvSet("LED_PORT", "asynLED")
 asynGPiOConfigure("$(LED_PORT)", 25, 0) # GPIO Pin 25 (GPIO 26)
-dbLoadRecords("db/GPiO.db","P=LaserDiffraction, R=LED, PORT=$(LED_PORT)")
+dbLoadRecords("db/BlinkingLEDs.db","P=LaserDiffraction, R=LED, PORT=$(LED_PORT)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

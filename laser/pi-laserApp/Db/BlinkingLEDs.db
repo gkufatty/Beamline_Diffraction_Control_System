@@ -1,0 +1,44 @@
+record(mbbi, "$(P):$(R):Mode") {
+    field(DESC, "LED Mode")
+    field(FLNK, "$(P):$(R):#Calc")
+
+    field(ZRST, "Off") field(ZRVL, "0")
+    field(ONST, "On")  field(ONVL, "1")
+    field(TWST, "Blink slow") field(TWVL, "2")
+    field(THST, "Blink fast") field(THVL, "3")
+}
+
+record(calc, "$(P):$(R):#BlinkSlow") {
+    field(DESC, "Calculation for output")
+    field(FLNK, "$(P):$(R):#Calc")
+    field(SCAN, ".5 second")
+    field(INPA, "$(P):$(R):#BlinkSlow")
+    field(CALC, "!A")
+}
+
+record(calc, "$(P):$(R):#BlinkFast") {
+    field(DESC, "Calculation for output")
+    field(FLNK, "$(P):$(R):#Calc")
+    field(SCAN, ".1 second")
+    field(INPA, "$(P):$(R):#BlinkFast")
+    field(CALC, "!A")
+}
+
+record(calc, "$(P):$(R):#Calc") {
+    field(DESC, "Calculation for output")
+    field(FLNK, "$(P):$(R):#Out")
+    field(INPA, "$(P):$(R):Mode")
+    field(INPB, "$(P):$(R):#BlinkSlow")
+    field(INPC, "$(P):$(R):#BlinkFast")
+    field(CALC, "A==0 ? 0 : (A==1 ? 1 : (A==2 ? B : C))")
+}
+
+record(ao, "$(P):$(R):#Out") {
+    field(DESC, "Output for LEDs")
+    field(DTYP, "asynFloat64")
+    field(OUT, "@asyn($(PORT))VALUE")
+    field(OMSL, "closed_loop")
+    field(DOL,  "$(P):$(R):#Calc")
+    field(DRVH, "1.0")
+    field(DRVL, "0.0")
+}
