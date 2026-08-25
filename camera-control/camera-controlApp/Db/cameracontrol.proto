@@ -1,0 +1,2 @@
+hostname = "epicsss-axiscamera-01.cslab.esss.lu.se"
+http_headers = "Host $hostname\r\nAuthorization: Basic cm9vdDplcGljcw==\r\n"
