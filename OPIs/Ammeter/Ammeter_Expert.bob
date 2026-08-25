@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
+  <width>970</width>
+  <height>450</height>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
@@ -20,37 +22,123 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
-    <text>Some Value:</text>
-    <y>50</y>
-  </widget>
-  <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
-    <pv_name>sim://sine</pv_name>
-    <x>100</x>
-    <y>50</y>
+    <text>Current measurement:</text>
+    <y>150</y>
+    <width>170</width>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label_2</name>
-    <class>COMMENT</class>
-    <text>Some comment.</text>
-    <x>220</x>
+    <name>Label_3</name>
+    <text>Configure current range:</text>
+    <y>200</y>
+    <width>170</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>CurrRangeRB</name>
+    <pv_name>LaserDiffraction:Keithley:curr-range-rbv</pv_name>
+    <x>170</x>
+    <y>230</y>
+    <width>350</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Current range readback:</text>
+    <y>230</y>
+    <width>170</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Device identification:</text>
     <y>50</y>
-    <width>140</width>
-    <font use_class="true">
-      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
-      </font>
-    </font>
-    <foreground_color use_class="true">
-      <color name="Text" red="0" green="0" blue="0">
-      </color>
-    </foreground_color>
-    <transparent use_class="true">true</transparent>
-    <wrap_words use_class="true">true</wrap_words>
+    <width>170</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>IDN</name>
+    <pv_name>LaserDiffraction:Keithley:idn</pv_name>
+    <x>150</x>
+    <y>50</y>
+    <width>370</width>
+    <height>40</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>ConfigCurrRange</name>
+    <pv_name>LaserDiffraction:Keithley:curr-range</pv_name>
+    <x>170</x>
+    <y>200</y>
+    <width>250</width>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>Current Trace Chart</name>
+    <x>570</x>
+    <y>20</y>
+    <y_axes>
+      <y_axis>
+        <title>Current (unit)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>$(traces[0].y_pv)</name>
+        <y_pv>LaserDiffraction:Keithley:meas:curr</y_pv>
+        <axis>0</axis>
+        <trace_type>2</trace_type>
+        <color>
+          <color red="0" green="0" blue="255">
+          </color>
+        </color>
+        <line_width>2</line_width>
+        <point_type>0</point_type>
+        <point_size>10</point_size>
+        <visible>false</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>CurrMeas</name>
+    <pv_name>LaserDiffraction:Keithley:meas:curr</pv_name>
+    <x>150</x>
+    <y>150</y>
+    <width>270</width>
   </widget>
   <widget type="led" version="2.0.0">
-    <name>LED</name>
-    <pv_name>meas:curr</pv_name>
-    <x>100</x>
-    <y>140</y>
+    <name>CommStat</name>
+    <pv_name>LaserDiffraction:Keithley:err</pv_name>
+    <x>150</x>
+    <y>110</y>
+    <off_label>Disconnected</off_label>
+    <on_label>Connected</on_label>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Communication status:</text>
+    <y>110</y>
+    <width>150</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Error queue:</text>
+    <y>380</y>
+    <width>170</width>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <x>320</x>
+    <y>110</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Ammeter output:</text>
+    <x>200</x>
+    <y>110</y>
+    <width>150</width>
   </widget>
 </display>
