@@ -1,0 +1,21 @@
+Terminator = CR;
+ReplyTimeout = 5000;
+
+getIDN {
+    out "*IDN?"; in "%39c"
+}
+
+measCurr {
+    out ":MEAS:CURR:DC?"; in "%f"
+}
+
+# ReadCurrRange {
+#     out "SENS:CURR:RANG?"; in "%f"
+# }
+GetCurr {
+    out ":FORM:ELEM CURR"; in "%f"
+}
+
+# measVolt {
+#     out "MEAS:VOLT:DC?"; in "%f"
+# }
