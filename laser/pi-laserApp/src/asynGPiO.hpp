@@ -5,10 +5,10 @@
 
 static const int LASER_PWM_RANGE = 1024;
 
-class asynLaser : public asynPortDriver {
+class asynGPiO : public asynPortDriver {
 public:
-    asynLaser(const char *portName, const int gpioPin, const int usePwm);
-    ~asynLaser();
+    asynGPiO(const char *portName, const int gpioPin, const int usePwm);
+    ~asynGPiO();
 
     virtual asynStatus writeFloat64(asynUser *pasynUser, epicsFloat64 value);
 

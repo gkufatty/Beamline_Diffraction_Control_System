@@ -16,12 +16,12 @@ dbLoadDatabase "dbd/pi-laser.dbd"
 pi_laser_registerRecordDeviceDriver pdbbase
 
 epicsEnvSet("LASER_PORT", "asynLaser")
-asynLaserConfigure("$(LASER_PORT)", 1, 1) # PWM Pin 1 (GPIO 19)
-dbLoadRecords("db/laser.db","P=LaserDiffraction, R=Laser, PORT=$(LASER_PORT)")
+asynGPiOConfigure("$(LASER_PORT)", 1, 1) # PWM Pin 1 (GPIO 19)
+dbLoadRecords("db/GPiO.db","P=LaserDiffraction, R=Laser, PORT=$(LASER_PORT)")
 
 epicsEnvSet("LED_PORT", "asynLED")
-asynLaserConfigure("$(LED_PORT)", 25, 0) # GPIO Pin 25 (GPIO 26)
-dbLoadRecords("db/laser.db","P=LaserDiffraction, R=LED, PORT=$(LED_PORT)")
+asynGPiOConfigure("$(LED_PORT)", 25, 0) # GPIO Pin 25 (GPIO 26)
+dbLoadRecords("db/GPiO.db","P=LaserDiffraction, R=LED, PORT=$(LED_PORT)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

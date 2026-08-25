@@ -8,12 +8,12 @@ record(ai, "$(P):$(R):Value") {
 
 record(bi, "$(P):$(R):Enable") {
     field(INP, "0")
-    field(DESC, "Enable laser")
+    field(DESC, "Enable output")
     field(FLNK, "$(P):$(R):#Calc")
 }
 
 record(calc, "$(P):$(R):#Calc") {
-    field(DESC, "Duty Cycle enabling")
+    field(DESC, "Calculation for output")
     field(FLNK, "$(P):$(R):#Out")
     field(INPA, "$(P):$(R):Value")
     field(INPB, "$(P):$(R):Enable")
@@ -21,7 +21,7 @@ record(calc, "$(P):$(R):#Calc") {
 }
 
 record(ao, "$(P):$(R):#Out") {
-    field(DESC, "Duty Cycle")
+    field(DESC, "Output for GPIO or PWM")
     field(DTYP, "asynFloat64")
     field(OUT, "@asyn($(PORT))VALUE")
     field(OMSL, "closed_loop")

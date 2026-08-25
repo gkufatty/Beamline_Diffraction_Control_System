@@ -1,13 +1,13 @@
-#include "asynLaser.hpp"
+#include "asynGPiO.hpp"
 #include "wiringPi.h"
 #include "epicsString.h"
 
 #include <iocsh.h>
 #include <epicsExport.h>
 
-static const char *driverName="asynLaser";
+static const char *driverName="asynGPiO";
 
-asynLaser::asynLaser(const char *portName, const int gpioPin, const int usePwm)
+asynGPiO::asynGPiO(const char *portName, const int gpioPin, const int usePwm)
     : asynPortDriver(portName, 1,
                      asynInt32Mask | asynFloat64Mask | asynDrvUserMask,
                      asynInt32Mask | asynFloat64Mask,
@@ -31,9 +31,9 @@ asynLaser::asynLaser(const char *portName, const int gpioPin, const int usePwm)
 
 }
 
-asynLaser::~asynLaser() = default;
+asynGPiO::~asynGPiO() = default;
 
-asynStatus asynLaser::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
+asynStatus asynGPiO::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
     int function = pasynUser->reason;
     asynStatus status = asynSuccess;
     const char *functionName = "writeFloat64";
@@ -70,9 +70,9 @@ asynStatus asynLaser::writeFloat64(asynUser *pasynUser, epicsFloat64 value) {
 
 extern "C" {
 
-    int asynLaserConfigure(const char *portName, const int gpioPin, const int usePwm)
+    int asynGPiOConfigure(const char *portName, const int gpioPin, const int usePwm)
     {
-        new asynLaser(portName, gpioPin, usePwm);
+        new asynGPiO(portName, gpioPin, usePwm);
         return(asynSuccess);
     }
 
@@ -84,15 +84,15 @@ extern "C" {
     static const iocshArg initArg2 = { "usePwm",iocshArgInt};
 
     static const iocshArg * const initArgs[] = {&initArg0, &initArg1, &initArg2};
-    static const iocshFuncDef initFuncDef = {"asynLaserConfigure",3,initArgs};
+    static const iocshFuncDef initFuncDef = {"asynGPiOConfigure",3,initArgs};
     static void initCallFunc(const iocshArgBuf *args) {
-        asynLaserConfigure(args[0].sval, args[1].ival, args[2].ival);
+        asynGPiOConfigure(args[0].sval, args[1].ival, args[2].ival);
     }
 
-    void asynLaserRegister(void) {
+    void asynGPiORegister(void) {
         iocshRegister(&initFuncDef,initCallFunc);
     }
 
-    epicsExportRegistrar(asynLaserRegister);
+    epicsExportRegistrar(asynGPiORegister);
 
 }
