@@ -1,7 +1,13 @@
 http_headers = "Host: epicsss-axiscamera-01.cslab.esss.lu.se\r\nAuthorization: Basic cm9vdDplcGljcw==";
 
-getId {
+getParam {
     extrainput = ignore;
-    out "GET /axis-cgi/param.cgi?action=list&group=root.Brand.ProdFullName HTTP/1.1\r\n"$http_headers"\r\n\r\n";
-    in "%*/root.Brand.ProdFullName=/%[^\r\n]";
+    out "GET /axis-cgi/param.cgi?action=list&group=\$1 HTTP/1.1\r\n"$http_headers"\r\n\r\n";
+    in "%*/\$1=/%[^\r\n]";
 }
+
+setParam {
+    extrainput = ignore;
+    out "GET /axis-cgi/param.cgi?action=update&\$1=%s HTTP/1.1\r\n"$http_headers"\r\n\r\n";
+}
+
