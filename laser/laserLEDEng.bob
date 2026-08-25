@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <widget type="group" version="3.0.0">
+    <name>Laser</name>
+    <x>50</x>
+    <width>260</width>
+    <height>220</height>
+    <widget type="scaledslider" version="2.0.0">
+      <name>Scaled Slider</name>
+      <pv_name>pva://LaserDiffraction:Laser:Value</pv_name>
+      <x>22</x>
+      <y>52</y>
+      <width>50</width>
+      <height>130</height>
+      <horizontal>false</horizontal>
+      <show_hihi>false</show_hihi>
+      <show_high>false</show_high>
+      <show_low>false</show_low>
+      <show_lolo>false</show_lolo>
+      <maximum>1.0</maximum>
+      <limits_from_pv>false</limits_from_pv>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>Progress Bar</name>
+      <pv_name>pva://LaserDiffraction:Laser:#Out</pv_name>
+      <x>32</x>
+      <y>12</y>
+      <width>190</width>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>1.0</maximum>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button</name>
+      <pv_name>pva://LaserDiffraction:Laser:Enable</pv_name>
+      <x>102</x>
+      <y>52</y>
+      <width>120</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Yellow LED</name>
+    <x>380</x>
+    <width>260</width>
+    <height>220</height>
+    <widget type="scaledslider" version="2.0.0">
+      <name>Scaled Slider_1</name>
+      <pv_name>pva://LaserDiffraction:YellowLED:Value</pv_name>
+      <x>22</x>
+      <y>52</y>
+      <width>50</width>
+      <height>120</height>
+      <horizontal>false</horizontal>
+      <show_hihi>false</show_hihi>
+      <show_high>false</show_high>
+      <show_low>false</show_low>
+      <show_lolo>false</show_lolo>
+      <maximum>1.0</maximum>
+      <limits_from_pv>false</limits_from_pv>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>Progress Bar_1</name>
+      <pv_name>pva://LaserDiffraction:YellowLED:#Out</pv_name>
+      <x>32</x>
+      <y>12</y>
+      <width>190</width>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>1.0</maximum>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>Boolean Button_1</name>
+      <pv_name>pva://LaserDiffraction:YellowLED:Enable</pv_name>
+      <x>102</x>
+      <y>52</y>
+      <width>120</width>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Red LED</name>
+    <x>50</x>
+    <y>230</y>
+    <width>250</width>
+    <height>90</height>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>pva://LaserDiffraction:RedLED:Mode</pv_name>
+      <x>2</x>
+      <y>12</y>
+      <width>160</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>pva://LaserDiffraction:RedLED:#Out</pv_name>
+      <x>182</x>
+      <y>12</y>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Green LED</name>
+    <x>380</x>
+    <y>230</y>
+    <width>250</width>
+    <height>90</height>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box_1</name>
+      <pv_name>pva://LaserDiffraction:GreenLED:Mode</pv_name>
+      <x>2</x>
+      <y>12</y>
+      <width>160</width>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>pva://LaserDiffraction:GreenLED:#Out</pv_name>
+      <x>182</x>
+      <y>12</y>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+  </widget>
+</display>
