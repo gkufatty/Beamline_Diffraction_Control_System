@@ -11,3 +11,13 @@ setParam {
     out "GET /axis-cgi/param.cgi?action=update&\$1=%s HTTP/1.1\r\n"$http_headers"\r\n\r\n";
 }
 
+getParamFloat {
+    extrainput = ignore;
+    out "GET /axis-cgi/param.cgi?action=list&group=\$1 HTTP/1.1\r\n"$http_headers"\r\n\r\n";
+    in "%*/\$1=/%f";
+}
+
+setParamFloat {
+    extrainput = ignore;
+    out "GET /axis-cgi/param.cgi?action=update&\$1=%f HTTP/1.1\r\n"$http_headers"\r\n\r\n";
+}
