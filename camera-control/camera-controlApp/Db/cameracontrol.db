@@ -1,0 +1,5 @@
+record(stringin, "$(P):$(R):Id") {
+    field(DESC, "Camera Identification")
+    field(INP, "@cool.proto getId $(PORT)")
+    field(DTYP, "stream")
+}

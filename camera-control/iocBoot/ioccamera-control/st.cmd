@@ -15,6 +15,11 @@ cd "${TOP}"
 dbLoadDatabase "dbd/camera-control.dbd"
 camera_control_registerRecordDeviceDriver pdbbase
 
+epicsEnvSet "STREAM_PROTOCOL_PATH" "$(TOP)/db"
+epicsEnvSet "PORT" "portname"
+drvAsynIPPortConfigure "$(PORT)", "epicsss-axiscamera-01.cslab.esss.lu.se:80 HTTP"
+dbLoadRecords("db/cameracontrol.db","P=LaserDiffraction,R=CameraControl,PORT=$(PORT)")
+
 ## Load record instances
 #dbLoadRecords("db/camera-control.db","user=epicsstudent")
 
