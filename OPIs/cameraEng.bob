@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Camera Controler</text>
+    <x>120</x>
+    <y>10</y>
+    <width>470</width>
+    <height>70</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD_ITALIC" size="44.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Brightness-RB</pv_name>
+    <x>70</x>
+    <y>130</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Brightness</pv_name>
+    <x>130</x>
+    <y>130</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Brightness</text>
+    <x>60</x>
+    <y>70</y>
+    <width>120</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB_1</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Sharpness-RB</pv_name>
+    <x>230</x>
+    <y>130</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness_1</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Sharpness</pv_name>
+    <x>290</x>
+    <y>130</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Sharpness</text>
+    <x>220</x>
+    <y>70</y>
+    <width>120</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB_2</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Contrast-RB</pv_name>
+    <x>380</x>
+    <y>130</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness_2</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Contrast</pv_name>
+    <x>440</x>
+    <y>130</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Contrast</text>
+    <x>370</x>
+    <y>70</y>
+    <width>120</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB_3</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Saturation-RB</pv_name>
+    <x>520</x>
+    <y>130</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness_3</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Saturation</pv_name>
+    <x>580</x>
+    <y>130</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Saturation</text>
+    <x>510</x>
+    <y>70</y>
+    <width>120</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Id</pv_name>
+    <x>670</x>
+    <y>10</y>
+    <width>190</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Model:</text>
+    <x>580</x>
+    <y>10</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:Serial</pv_name>
+    <x>670</x>
+    <y>50</y>
+    <width>190</width>
+    <height>30</height>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Serial:</text>
+    <x>580</x>
+    <y>50</y>
+    <width>80</width>
+    <height>30</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Aperture</text>
+    <x>40</x>
+    <y>320</y>
+    <width>160</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>LaserDiffraction:CameraControl:ApertureEnable</pv_name>
+    <x>110</x>
+    <y>390</y>
+    <width>90</width>
+    <items>
+      <item>yes</item>
+      <item>no</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Enable:</text>
+    <x>20</x>
+    <y>360</y>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>LaserDiffraction:CameraControl:ApertureEnable-RB</pv_name>
+    <x>110</x>
+    <y>360</y>
+    <width>90</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_11</name>
+    <text>Defog</text>
+    <x>250</x>
+    <y>320</y>
+    <width>160</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_2</name>
+    <pv_name>LaserDiffraction:CameraControl:DefogEnable</pv_name>
+    <x>320</x>
+    <y>390</y>
+    <width>90</width>
+    <items>
+      <item>on</item>
+      <item>off</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_12</name>
+    <text>Enable:</text>
+    <x>230</x>
+    <y>360</y>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>LaserDiffraction:CameraControl:DefogEnable-RB</pv_name>
+    <x>320</x>
+    <y>360</y>
+    <width>90</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_13</name>
+    <text>Wide Dynamic Range</text>
+    <x>670</x>
+    <y>90</y>
+    <width>220</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_3</name>
+    <pv_name>LaserDiffraction:CameraControl:WDREnable</pv_name>
+    <x>740</x>
+    <y>160</y>
+    <width>140</width>
+    <items>
+      <item>on</item>
+      <item>off</item>
+    </items>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>LaserDiffraction:CameraControl:WDREnable-RB</pv_name>
+    <x>740</x>
+    <y>130</y>
+    <width>140</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_14</name>
+    <text>Enable:</text>
+    <x>660</x>
+    <y>130</y>
+    <width>80</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB_4</name>
+    <pv_name>LaserDiffraction:CameraControl:ApertureValue-RB</pv_name>
+    <x>110</x>
+    <y>420</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness_4</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:ApertureValue</pv_name>
+    <x>170</x>
+    <y>420</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_15</name>
+    <text>Value:</text>
+    <x>40</x>
+    <y>460</y>
+    <width>70</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB_5</name>
+    <pv_name>LaserDiffraction:CameraControl:DefogValue-RB</pv_name>
+    <x>320</x>
+    <y>420</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness_5</name>
+    <pv_name>pva://LaserDiffraction:CameraControl:DefogValue</pv_name>
+    <x>380</x>
+    <y>420</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_16</name>
+    <text>Value:</text>
+    <x>250</x>
+    <y>460</y>
+    <width>70</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_17</name>
+    <text>IR Cut Filter</text>
+    <x>670</x>
+    <y>200</y>
+    <width>220</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_4</name>
+    <pv_name>LaserDiffraction:CameraControl:IrCutFilter</pv_name>
+    <x>740</x>
+    <y>270</y>
+    <width>140</width>
+    <items>
+      <item>yes</item>
+      <item>no</item>
+      <item>auto</item>
+    </items>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_7</name>
+    <pv_name>LaserDiffraction:CameraControl:IrCutFilter-RB</pv_name>
+    <x>740</x>
+    <y>240</y>
+    <width>140</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_18</name>
+    <text>Enable:</text>
+    <x>660</x>
+    <y>240</y>
+    <width>80</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_19</name>
+    <text>Exposure</text>
+    <x>460</x>
+    <y>320</y>
+    <width>160</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_5</name>
+    <pv_name>LaserDiffraction:CameraControl:ExposureMode</pv_name>
+    <x>530</x>
+    <y>390</y>
+    <width>90</width>
+    <items>
+      <item>auto</item>
+      <item>hold</item>
+      <item>flickerfree50</item>
+      <item>flickerfree60</item>
+      <item>flickerreduced50</item>
+      <item>flickerreduced60</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Enable:</text>
+    <x>440</x>
+    <y>360</y>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_8</name>
+    <pv_name>LaserDiffraction:CameraControl:ExposureMode-RB</pv_name>
+    <x>530</x>
+    <y>360</y>
+    <width>90</width>
+    <height>30</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="linearmeter" version="3.0.0">
+    <name>Brightness RB_6</name>
+    <pv_name>LaserDiffraction:CameraControl:ExposureValue-RB</pv_name>
+    <x>530</x>
+    <y>420</y>
+    <width>50</width>
+    <height>140</height>
+    <show_units>false</show_units>
+    <show_limits>false</show_limits>
+    <show_warnings>false</show_warnings>
+    <displayHorizontal>false</displayHorizontal>
+  </widget>
+  <widget type="scaledslider" version="2.0.0">
+    <name>Brightness_6</name>
+    <pv_name>LaserDiffraction:CameraControl:ExposureValue</pv_name>
+    <x>590</x>
+    <y>420</y>
+    <width>30</width>
+    <height>140</height>
+    <horizontal>false</horizontal>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Level:</text>
+    <x>460</x>
+    <y>460</y>
+    <width>70</width>
+    <height>60</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+</display>
