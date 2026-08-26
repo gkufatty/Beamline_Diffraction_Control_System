@@ -1,27 +1,214 @@
 record(stringin, "$(P):$(R):Id") {
-    field(DESC, "Camera Identification")
+    field(DESC, "Camera Model Identification")
     field(INP, "@cameracontrol.proto getParam(root.Brand.ProdFullName) $(PORT)")
     field(DTYP, "stream")
     field(PINI, "YES")
 }
 
 record(stringin, "$(P):$(R):Serial") {
-    field(DESC, "Camera Identification")
+    field(DESC, "Camera Serial Number")
     field(INP, "@cameracontrol.proto getParam(root.Properties.System.SerialNumber) $(PORT)")
     field(DTYP, "stream")
     field(PINI, "YES")
-    field(TPRO, "1")
 }
 
 record(ai, "$(P):$(R):Sharpness-RB") {
-    field(DESC, "Camera Identification")
+    field(DESC, "Camera Sharpness RB")
     field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.Sharpness) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):Sharpness") {
+    field(DESC, "Camera Sharpness")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.Sharpness) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(ai, "$(P):$(R):Brightness-RB") {
+    field(DESC, "Camera Brightness RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.Brightness) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):Brightness") {
+    field(DESC, "Camera Brightness")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.Brightness) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(ai, "$(P):$(R):Contrast-RB") {
+    field(DESC, "Camera Contrast RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.Contrast) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):Contrast") {
+    field(DESC, "Camera Contrast")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.Contrast) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(ai, "$(P):$(R):Saturation-RB") {
+    field(DESC, "Camera Saturation RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.ColorLevel) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):Saturation") {
+    field(DESC, "Camera Saturation")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.ColorLevel) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(stringin, "$(P):$(R):ExposureMode-RB") {
+    field(DESC, "Camera Exposure Mode RB")
+    field(INP, "@cameracontrol.proto getParam(root.ImageSource.I0.Sensor.Exposure) $(PORT)")
     field(DTYP, "stream")
     field(SCAN, "1 second")
 }
 
-record(ao, "$(P):$(R):Sharpness") {
-    field(DESC, "Camera Identification")
-    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.Sharpness) $(PORT)")
+record(stringout, "$(P):$(R):ExposureMode") {
+    field(DESC, "Camera Exposure Mode")
+    field(OUT, "@cameracontrol.proto setParam(root.ImageSource.I0.Sensor.Exposure) $(PORT)")
+    field(DTYP, "stream")
+}
+
+record(ai, "$(P):$(R):ExposureValue-RB") {
+    field(DESC, "Camera Exposure Value RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.ExposureValue) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):ExposureValue") {
+    field(DESC, "Camera Exposure Value")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.ExposureValue) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(stringin, "$(P):$(R):IrCutFilter-RB") {
+    field(DESC, "Camera IR Cut Filter RB")
+    field(INP, "@cameracontrol.proto getParam(root.ImageSource.I0.DayNight.IrCutFilter) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+}
+
+record(stringout, "$(P):$(R):IrCutFilter") {
+    field(DESC, "Camera IR Cut Filter")
+    field(OUT, "@cameracontrol.proto setParam(root.ImageSource.I0.DayNight.IrCutFilter) $(PORT)")
+    field(DTYP, "stream")
+}
+
+record(ai, "$(P):$(R):ShiftLevel-RB") {
+    field(DESC, "Camera Shift Level RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.DayNight.ShiftLevel) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):ShiftLevel") {
+    field(DESC, "Camera Shift Level")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.DayNight.ShiftLevel) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(stringin, "$(P):$(R):ApertureEnable-RB") {
+    field(DESC, "Camera Aperture Enable RB")
+    field(INP, "@cameracontrol.proto getParam(root.ImageSource.I0.DCIris.Enabled) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+}
+
+record(stringout, "$(P):$(R):ApertureEnable") {
+    field(DESC, "Camera Aperture Enable")
+    field(OUT, "@cameracontrol.proto setParam(root.ImageSource.I0.DCIris.Enabled) $(PORT)")
+    field(DTYP, "stream")
+}
+
+record(ai, "$(P):$(R):ApertureValue-RB") {
+    field(DESC, "Camera Aperture Value RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.DCIris.Position) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):ApertureValue") {
+    field(DESC, "Camera Aperture Value")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.DCIris.Position) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(stringin, "$(P):$(R):DefogEnable-RB") {
+    field(DESC, "Camera Defog Enable RB")
+    field(INP, "@cameracontrol.proto getParam(root.ImageSource.I0.Sensor.Defog) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+}
+
+record(stringout, "$(P):$(R):DefogEnable") {
+    field(DESC, "Camera Defog Enable")
+    field(OUT, "@cameracontrol.proto setParam(root.ImageSource.I0.Sensor.Defog) $(PORT)")
+    field(DTYP, "stream")
+}
+
+record(ai, "$(P):$(R):DefogValue-RB") {
+    field(DESC, "Camera Defog Value RB")
+    field(INP, "@cameracontrol.proto getParamFloat(root.ImageSource.I0.Sensor.DefogEffect) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+    field(HOPR, 100)
+    field(LOPR, 0)
+}
+
+record(ao, "$(P):$(R):DefogValue") {
+    field(DESC, "Camera Defog Value")
+    field(OUT, "@cameracontrol.proto setParamFloat(root.ImageSource.I0.Sensor.DefogEffect) $(PORT)")
+    field(DTYP, "stream")
+    field(DRVH, 100) field(HOPR, 100)
+    field(DRVL, 0)   field(LOPR, 0)
+}
+
+record(stringin, "$(P):$(R):WDREnable-RB") {
+    field(DESC, "Camera WDR Enable RB")
+    field(INP, "@cameracontrol.proto getParam(root.ImageSource.I0.Sensor.WDR) $(PORT)")
+    field(DTYP, "stream")
+    field(SCAN, "1 second")
+}
+
+record(stringout, "$(P):$(R):WDREnable") {
+    field(DESC, "Camera WDR Enable")
+    field(OUT, "@cameracontrol.proto setParam(root.ImageSource.I0.Sensor.WDR) $(PORT)")
     field(DTYP, "stream")
 }
