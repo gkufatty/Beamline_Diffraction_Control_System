@@ -19,5 +19,5 @@ getParamFloat {
 
 setParamFloat {
     extrainput = ignore;
-    out "GET /axis-cgi/param.cgi?action=update&\$1=%f HTTP/1.1\r\n"$http_headers"\r\n\r\n";
+    out "GET /axis-cgi/param.cgi?action=update&\$1=%.0f HTTP/1.1\r\n"$http_headers"\r\n\r\n";
 }
