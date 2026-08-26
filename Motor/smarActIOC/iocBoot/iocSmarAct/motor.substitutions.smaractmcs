@@ -1,8 +1,8 @@
 file "$(MOTOR)/db/asyn_motor.db"
 {
 pattern
-{P,        M,      DTYP,      PORT, ADDR,   DESC,    EGU, DIR,   VELO,  VBAS, ACCL, BDST, BVEL, BACC, MRES, PREC,   DHLM,   DLLM, INIT}
-{LaserDiffraction:Motor:, Linear, "asynMotor",  "MCS",   0,  "Linear motor", mm,  Pos,   1,     0,    0.2,  0,    1,    0.2,  1e-6, 2,      3,      -3,   ""}
-{LaserDiffraction:Motor:, Rotational, "asynMotor",  "MCS",   1,  "Rotational motor", deg,  Pos,   1,     0,    0.2,  0,    1,    0.2,  1e-6, 2,      3,      -3,   ""}
-{LaserDiffraction:Motor:, Tilt, "asynMotor",  "MCS",   2,  "Tilt motor", mm,  Pos,   1,     0,    0.2,  0,    1,    0.2,  1e-6, 2,      3,      -3,   ""} 
+{P,        M,      DTYP,      PORT, ADDR,   DESC,      EGU,  DIR,   VELO,  VBAS, ACCL, BDST, BVEL,  BACC, MRES, PREC,  DHLM,   DLLM, INIT}
+{SMARACT:, M1, "asynMotor",  "MCS",   0,  "rotation",   deg,  Pos,     1,    0,    0.2,  0,    1,    0.2,  1e-6, 8,     180,   -180,   ""} 
+{SMARACT:, M2, "asynMotor",  "MCS",   1,  "tilt",       deg,  Pos,     1,    0,    0.2,  0,    1,    0.2,  1e-6, 2,       20,   -20,   ""} 
+{SMARACT:, M3, "asynMotor",  "MCS",   2,  "linear",     mm,  Pos,      1,    0,    0.2,  0,    1,    0.2,  1e-6, 2,      10,    -10,   ""} 
 }
