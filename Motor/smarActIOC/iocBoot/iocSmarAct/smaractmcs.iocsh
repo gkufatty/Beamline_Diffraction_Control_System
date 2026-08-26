@@ -3,7 +3,7 @@
 dbLoadTemplate "motor.substitutions.smaractmcs"
 
 # Configure each controller
-drvAsynIPPortConfigure("MCS_ETH","epicsss-smaract-01.cslab.esss.lu.se:5000",0,0,0)
+drvAsynIPPortConfigure("MCS_ETH","172.30.200.36:5000",0,0,0)
 
 # Controller port, asyn port, number of axis, moving poll period, idle poll period
 # smarActMCSCreateController(const char *motorPortName, const char *ioPortName, int numAxes, double movingPollPeriod, double idlePollPeriod, int disableSpeed);
