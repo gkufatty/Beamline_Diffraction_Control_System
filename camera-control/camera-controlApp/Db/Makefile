@@ -12,6 +12,7 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB += cameracontrol.db
 DB += cameracontrol.proto
+DB += cameracontrol.req
 
 
 #----------------------------------------------------
@@ -21,4 +22,3 @@ DB += cameracontrol.proto
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
-

@@ -20,12 +20,13 @@ DBD += camera-control.dbd
 camera-control_DBD += base.dbd
 camera-control_DBD += stream.dbd drvAsynIPPort.dbd
 camera-control_DBD += qsrv.dbd PVAServerRegister.dbd
+camera-control_DBD += asSupport.dbd
 
 # Include dbd files from all support applications:
 #camera-control_DBD += xxx.dbd
 
 # Add all the support libraries needed by this IOC
-camera-control_LIBS += stream asyn qsrv $(EPICS_BASE_PVA_CORE_LIBS)
+camera-control_LIBS += stream asyn qsrv $(EPICS_BASE_PVA_CORE_LIBS) autosave
 
 # camera-control_registerRecordDeviceDriver.cpp derives from camera-control.dbd
 camera-control_SRCS += camera-control_registerRecordDeviceDriver.cpp
