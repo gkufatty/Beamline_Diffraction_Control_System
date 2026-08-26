@@ -212,3 +212,23 @@ record(stringout, "$(P):$(R):WDREnable") {
     field(OUT, "@cameracontrol.proto setParam(root.ImageSource.I0.Sensor.WDR) $(PORT)")
     field(DTYP, "stream")
 }
+
+record(fanout, "$(P):$(R):#RestoreProcessFanout") {
+    field(DESC, "description")
+    field(SELM, "All")
+    field(PINI, "YES")
+
+    field(LNK1, "$(P):$(R):Sharpness")
+    field(LNK2, "$(P):$(R):Brightness")
+    field(LNK3, "$(P):$(R):Contrast")
+    field(LNK4, "$(P):$(R):Saturation")
+    field(LNK5, "$(P):$(R):ExposureMode")
+    field(LNK6, "$(P):$(R):ExposureValue")
+    field(LNK7, "$(P):$(R):IrCutFilter")
+    field(LNK8, "$(P):$(R):ShiftLevel")
+    field(LNK9, "$(P):$(R):ApertureEnable")
+    field(LNKA, "$(P):$(R):ApertureValue")
+    field(LNKB, "$(P):$(R):DefogEnable")
+    field(LNKC, "$(P):$(R):DefogValue")
+    field(LNKD, "$(P):$(R):WDREnable")
+}

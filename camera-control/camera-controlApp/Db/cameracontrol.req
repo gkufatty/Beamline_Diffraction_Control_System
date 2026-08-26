@@ -1,0 +1,13 @@
+$(P):$(R):Sharpness.VAL
+$(P):$(R):Brightness.VAL
+$(P):$(R):Contrast.VAL
+$(P):$(R):Saturation.VAL
+$(P):$(R):ExposureValue.VAL
+$(P):$(R):ShiftLevel.VAL
+$(P):$(R):ApertureValue.VAL
+$(P):$(R):DefogValue.VAL
+$(P):$(R):ExposureMode.VAL
+$(P):$(R):IrCutFilter.VAL
+$(P):$(R):ApertureEnable.VAL
+$(P):$(R):DefogEnable.VAL
+$(P):$(R):WDREnable.VAL
