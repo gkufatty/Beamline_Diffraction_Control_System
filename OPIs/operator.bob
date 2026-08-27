@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <macros>
+    <P>LaserDiffraction:</P>
+    <R>cam1:</R>
+  </macros>
+  <widget type="group" version="3.0.0">
+    <name>Laser &amp; LEDs</name>
+    <x>10</x>
+    <y>10</y>
+    <width>360</width>
+    <height>150</height>
+    <widget type="progressbar" version="2.0.0">
+      <name>Progress Bar</name>
+      <pv_name>pva://LaserDiffraction:Laser:#Out</pv_name>
+      <x>52</x>
+      <y>12</y>
+      <width>270</width>
+      <height>30</height>
+      <fill_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </fill_color>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>1.0</maximum>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_1</name>
+      <pv_name>pva://LaserDiffraction:RedLED:#Out</pv_name>
+      <x>32</x>
+      <y>82</y>
+      <width>30</width>
+      <height>30</height>
+      <off_color>
+        <color red="128" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="STOP" red="255" green="0" blue="0">
+        </color>
+      </on_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_2</name>
+      <pv_name>pva://LaserDiffraction:GreenLED:#Out</pv_name>
+      <x>112</x>
+      <y>82</y>
+      <width>30</width>
+      <height>30</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Laser</text>
+      <x>2</x>
+      <y>12</y>
+      <width>190</width>
+      <height>30</height>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Green LED</text>
+      <x>82</x>
+      <y>52</y>
+      <width>90</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_3</name>
+      <text>Red LED</text>
+      <x>2</x>
+      <y>52</y>
+      <width>90</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Yellow LED</text>
+      <x>182</x>
+      <y>52</y>
+      <width>80</width>
+      <height>30</height>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="progressbar" version="2.0.0">
+      <name>Progress Bar_1</name>
+      <pv_name>pva://LaserDiffraction:YellowLED:#Out</pv_name>
+      <x>182</x>
+      <y>82</y>
+      <width>130</width>
+      <height>30</height>
+      <fill_color>
+        <color name="ActiveText" red="255" green="255" blue="0">
+        </color>
+      </fill_color>
+      <limits_from_pv>false</limits_from_pv>
+      <maximum>1.0</maximum>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>Position</text>
+      <x>118</x>
+      <y>214</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Motor</name>
+    <x>10</x>
+    <y>160</y>
+    <width>360</width>
+    <height>150</height>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Speed</text>
+      <x>22</x>
+      <y>22</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>SMARACT:m1.VELO</pv_name>
+      <x>22</x>
+      <y>52</y>
+      <width>110</width>
+      <height>30</height>
+      <precision>2</precision>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="meter" version="3.0.0">
+      <name>Meter</name>
+      <pv_name>SMARACT:m1</pv_name>
+      <x>132</x>
+      <y>2</y>
+      <width>190</width>
+      <height>90</height>
+      <precision>0</precision>
+      <show_value>false</show_value>
+      <show_limits>false</show_limits>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <limits_from_pv>false</limits_from_pv>
+      <minimum>-200.0</minimum>
+      <maximum>200.0</maximum>
+      <needle_color>
+        <color red="128" green="0" blue="128">
+        </color>
+      </needle_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>Position</text>
+      <x>152</x>
+      <y>92</y>
+      <width>150</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Camera</name>
+    <x>370</x>
+    <y>10</y>
+    <width>670</width>
+    <height>400</height>
+    <widget type="label" version="2.0.0">
+      <name>Label_4</name>
+      <text>Brightness</text>
+      <x>2</x>
+      <y>42</y>
+      <width>120</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="linearmeter" version="3.0.0">
+      <name>Brightness RB</name>
+      <pv_name>pva://LaserDiffraction:CameraControl:Brightness-RB</pv_name>
+      <x>122</x>
+      <y>52</y>
+      <width>170</width>
+      <height>40</height>
+      <show_units>false</show_units>
+      <show_limits>false</show_limits>
+      <show_warnings>false</show_warnings>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_6</name>
+      <text>Sharpness</text>
+      <x>2</x>
+      <y>82</y>
+      <width>120</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="linearmeter" version="3.0.0">
+      <name>Brightness RB_1</name>
+      <pv_name>pva://LaserDiffraction:CameraControl:Sharpness-RB</pv_name>
+      <x>122</x>
+      <y>92</y>
+      <width>170</width>
+      <height>40</height>
+      <show_units>false</show_units>
+      <show_limits>false</show_limits>
+      <show_warnings>false</show_warnings>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>Contrast</text>
+      <x>2</x>
+      <y>122</y>
+      <width>110</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="linearmeter" version="3.0.0">
+      <name>Brightness RB_2</name>
+      <pv_name>pva://LaserDiffraction:CameraControl:Contrast-RB</pv_name>
+      <x>122</x>
+      <y>132</y>
+      <width>170</width>
+      <height>40</height>
+      <show_units>false</show_units>
+      <show_limits>false</show_limits>
+      <show_warnings>false</show_warnings>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_10</name>
+      <text>Saturation</text>
+      <x>2</x>
+      <y>162</y>
+      <width>110</width>
+      <height>40</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="20.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="linearmeter" version="3.0.0">
+      <name>Brightness RB_3</name>
+      <pv_name>pva://LaserDiffraction:CameraControl:Saturation-RB</pv_name>
+      <x>122</x>
+      <y>172</y>
+      <width>170</width>
+      <height>40</height>
+      <show_units>false</show_units>
+      <show_limits>false</show_limits>
+      <show_warnings>false</show_warnings>
+    </widget>
+    <widget type="image" version="2.0.0">
+      <name>Image</name>
+      <pv_name>pva://LaserDiffraction:Pva1:Image</pv_name>
+      <x>322</x>
+      <y>62</y>
+      <width>310</width>
+      <height>240</height>
+      <color_map>
+        <name>GRAY</name>
+      </color_map>
+      <color_bar>
+        <visible>false</visible>
+        <bar_size>40</bar_size>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+      </color_bar>
+      <x_axis>
+        <visible>false</visible>
+        <title>Camera Image</title>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+      </x_axis>
+      <y_axis>
+        <visible>false</visible>
+        <title>Y</title>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+      </y_axis>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>cambut</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write</description>
+          <pv_name>LaserDiffraction:cam1:Acquire</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>LaserDiffraction:cam1:Acquire</pv_name>
+      <text>Start Camera</text>
+      <x>322</x>
+      <y>332</y>
+      <width>310</width>
+      <height>20</height>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Keithley</name>
+    <x>10</x>
+    <y>310</y>
+    <width>360</width>
+    <height>100</height>
+    <widget type="label" version="2.0.0">
+      <name>Current</name>
+      <text>Current</text>
+      <x>22</x>
+      <y>22</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>=1000000000*`LaserDiffraction:Keithley:meas-curr`</pv_name>
+      <x>92</x>
+      <y>22</y>
+      <width>150</width>
+      <height>30</height>
+      <precision>3</precision>
+      <show_units>false</show_units>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Current_1</name>
+      <text>nA</text>
+      <x>252</x>
+      <y>22</y>
+      <width>60</width>
+      <height>30</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>

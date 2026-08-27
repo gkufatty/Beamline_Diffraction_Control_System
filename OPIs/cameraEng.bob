@@ -563,6 +563,9 @@
     <y>30</y>
     <width>630</width>
     <height>509</height>
+    <color_map>
+      <name>GRAY</name>
+    </color_map>
     <color_bar>
       <visible>false</visible>
       <bar_size>40</bar_size>

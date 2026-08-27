@@ -26,6 +26,10 @@
       <x>32</x>
       <y>12</y>
       <width>190</width>
+      <fill_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </fill_color>
       <limits_from_pv>false</limits_from_pv>
       <maximum>1.0</maximum>
     </widget>
@@ -35,6 +39,14 @@
       <x>102</x>
       <y>52</y>
       <width>120</width>
+      <off_color>
+        <color red="128" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="255" green="0" blue="0">
+        </color>
+      </on_color>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
@@ -63,6 +75,10 @@
       <x>32</x>
       <y>12</y>
       <width>190</width>
+      <fill_color>
+        <color name="ActiveText" red="255" green="255" blue="0">
+        </color>
+      </fill_color>
       <limits_from_pv>false</limits_from_pv>
       <maximum>1.0</maximum>
     </widget>
@@ -72,6 +88,14 @@
       <x>102</x>
       <y>52</y>
       <width>120</width>
+      <off_color>
+        <color red="128" green="128" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color red="255" green="255" blue="0">
+        </color>
+      </on_color>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
@@ -94,6 +118,14 @@
       <y>12</y>
       <width>30</width>
       <height>30</height>
+      <off_color>
+        <color red="128" green="0" blue="0">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="255" green="0" blue="0">
+        </color>
+      </on_color>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
