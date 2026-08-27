@@ -20,6 +20,7 @@ record(bo, "$(P):$(R):form-elem-curr") {
     field(OUT, "@cool.proto setFormElemCurr $(PORT)")
     field(ZNAM, "0")
     field(ONAM, "1")
+    field(PINI, "YES")
 }
 
 record(ao, "$(P):$(R):curr-range") {
