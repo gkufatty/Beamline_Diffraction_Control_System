@@ -1,0 +1,22 @@
+[project]
+name = "laserdiffraction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "David Andrino", email = "david.andrino@upm.es" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "p4p>=4.2.2",
+    "pyepics>=3.5.10",
+]
+
+[project.scripts]
+laserdiffraction = "laserdiffraction:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
