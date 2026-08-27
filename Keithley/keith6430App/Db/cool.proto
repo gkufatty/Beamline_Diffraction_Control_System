@@ -1,0 +1,54 @@
+Terminator = CR;
+ReplyTimeout = 10000;
+
+getIDN {
+    out "*IDN?"; in "%79c"
+}
+
+measCurr {
+    out ":MEAS:CURR:DC?"; in "%f"
+}
+
+setFormElemCurr {
+    out ":FORM:ELEM CURR";
+}
+
+setCurrRange {
+    out ":SENSE:CURR:RANG %f";
+}
+
+getCurrRange {
+    out ":SENS:CURR:RANG?"; in "%f"
+}
+
+getErr {
+    out ":SYST:ERR?"; in "%79c"
+}
+
+setAutoZero {
+    out "SYST:AZER:STAT %{OFF|ON|ONCE}";
+}
+
+getAutoZero {
+    out ":SYST:AZER:STAT?"; in "%d"
+}
+
+setRangeAuto {
+    out ":SENS:CURR:RANG:AUTO %d";
+}
+
+getRangeAuto {
+    out ":SENS:CURR:RANG:AUTO?"; in "%d"
+}
+
+setNPLC {
+    out ":SENS:CURR:NPLC %f";
+}
+
+getNPLC {
+    out ":SENS:CURR:NPLC?"; in "%f"
+}
+
+clearErrQueue {
+    out ":STATus:QUEue:CLEar";
+}
